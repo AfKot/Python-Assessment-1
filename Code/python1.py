@@ -35,10 +35,14 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
-	
+	if(len(input1) > len(input2)):
+		return input1
+	elif(len(input1) < len(input2)):
+		return input2
+	else:
+		return f'{input1} {input2}'
 
-
+print(one("hi", "hello"))
 
 
 
@@ -65,6 +69,7 @@ def one(input1, input2):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
+
 	return ""
 
 
@@ -90,7 +95,20 @@ def two(input):
 	# No Hints for this question
 
 def three(arg1):
-	return ""
+	if(arg1 % 3 == 0 and arg1 % 5 == 0):
+		return "fizzbuzz"
+	elif(arg1 % 3 == 0 and arg1 % 5 != 0):
+		return "fizz"
+	elif(arg1 % 5 == 0 and arg1 % 3 != 0):
+		return "buzz"
+	else:
+		return "null"
+
+print(three(3))
+print(three(30))
+print(three(21))
+print(three(7))
+
 
 
 	# <QUESTION 4>
@@ -116,7 +134,11 @@ def three(arg1):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
+
 	return ""
+
+
+
 
 	# <QUESTION 5>
 
@@ -186,8 +208,14 @@ def six(input):
 #def isVowel(ch): 
 #    return ch.upper() in ['A', 'E', 'I', 'O', 'U'] 
 
-def seven(input): 
-	pass
+def seven(input7): 
+	count = 0
+	for vowel in input7:
+		if vowel in "aAeEiIoOuU":
+			count = count + 1
+	return count
+
+print(seven("check for vowels"))
    
 
 	# <QUESTION 8>
@@ -205,8 +233,13 @@ def seven(input):
 
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
-def eight(input):
-	return ""
+def eight(input8):
+	count1 = 1
+	for input8 in range (1, input8+1):
+		count1 *= input8
+	return count1
+
+print(eight(5))
 	
 
 	# <QUESTION 9>
@@ -228,7 +261,20 @@ def eight(input):
 	# Take a look at the documentation for Strings, List and range.
 
 def nine(inputString, char):
-	return ""
+	count = 0
+	inputString = inputString.replace(" ", "")
+	index = inputString.find(char) + 1
+	if char in inputString:
+		return index
+	else:
+		return -1
+
+print(nine("donkey","o"))
+print(nine("donkey is the best in the world","i"))
+print(nine("donkey is the best in the world","q"))
+print(nine("donkey is the best in the world","I"))
+print(nine("I love python","L"))
+print(nine("I LOVE PYTHON", "L"))
 
 
 	# <QUESTION 10>

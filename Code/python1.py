@@ -68,9 +68,23 @@ print(one("hi", "hello"))
 	
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
-def two(input):
+def two(input2):
+	n = 0
+	lower_input = input2.lower()
+	start_b = []
+	while (n < len(input2)):
+		if (lower_input[n] == "b"):
+			if (lower_input[n:n+4] == "bert"):
+				start_b.append(n)
+				n+=4
+				continue
+		n += 1
+	if (len(start_b)<2):
+		return ""
+	else:
+		output = input2[start_b[0]+4:start_b[-1]]
+		return output
 
-	return ""
 
 
 
@@ -134,9 +148,16 @@ print(three(7))
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-
-	return ""
-
+	numList = arg1.split()
+	largest = 0
+	for x in numList:
+		size = 0
+		strNum = str(x)
+		for y in range(len(strNum)):
+			size += int(strNum[y])
+			if size > largest:
+				largest = size
+	return largest
 
 
 
@@ -165,8 +186,14 @@ def four(arg1):
 
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
-def five(input):
-	return ""
+def five(input5):
+	list_files = input5.split(",")
+	length = len(list_files)
+	unsafe = []
+	for encrypt in range(2, length, 4):
+		if (list_files[encrypt] == "False" and list_files[(encrypt-2)] not in unsafe):
+			unsafe.append(list_files[(encrypt-2)])
+	return unsafe
 
 	# <QUESTION 6>
 
@@ -304,5 +331,17 @@ print(nine("I LOVE PYTHON", "L"))
 
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
-def ten(string, int, char): 
-	return ""
+def ten(string10, int, char):
+	string10_lo = string10.lower()
+	w_length = len(string10_lo)
+	
+	if int <= w_length:
+		if (string10_lo[int - 1] == char):
+			return True
+		else:
+			return False
+	return False
+
+
+print(ten("Tottenham", 2, "E"))
+print(ten("HEY",2,"e"))

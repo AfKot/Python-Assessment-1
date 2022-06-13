@@ -186,9 +186,19 @@ def five(input):
 	# Step through the logic here in order to solve the problem, you may find help(range) helpful.
 
 
-def six(input):
-	return ""
+def six(input6):
+	if "cie" in input6:
+		return False
+	elif "ie" in input6:
+		return True
+	elif "cei" in input6:
+		return True
+	elif "ei" in input6:
+		return False
+	else:
+		return False
 	
+print(six("ceiling"))
 	
 		
 
